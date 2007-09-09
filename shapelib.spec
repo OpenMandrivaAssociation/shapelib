@@ -1,10 +1,11 @@
 %define	major 1
-%define	libname	%mklibname %{name} %{major}
+%define	libname %mklibname %{name} %{major}
+%define	develname %mklibname %{name} -d
 
 Summary:	API in "C" for Shapefile handling
 Name:		shapelib
 Version:	1.2.10
-Release:	%mkrel 2
+Release:	%mkrel 3
 License:	LGPL MIT
 Group:		Sciences/Geosciences
 URL:		http://shapelib.maptools.org/
@@ -31,15 +32,15 @@ simple C programs for reading, writing and updating (to a
 limited extent) ESRI Shapefiles, and the associated
 attribute file (.dbf).
 
-
-%package -n	%{libname}-devel
+%package -n	%{develname}
 Summary:	API in "C" for Shapefile handling
 Group:		Development/Other
 Requires:	%{libname} = %{version}
 Provides:	lib%{name}-devel = %{version}-%{release}
 Provides:	%{name}-devel = %{version}-%{release}
+Obsoletes:	%{mklibname %{name} 1 -d}
 
-%description -n	%{libname}-devel
+%description -n	%{develname}
 The Shapefile C Library provides the ability to write
 simple C programs for reading, writing and updating (to a
 limited extent) ESRI Shapefiles, and the associated
@@ -84,7 +85,7 @@ rm -rf %{buildroot}
 %doc contrib/doc/shpproj.txt
 %{_bindir}/*
 
-%files -n %{libname}-devel
+%files -n %{develname}
 %defattr (-,root,root)
 %{_includedir}/libshp/shapefil.h
 %{_libdir}/*.so
