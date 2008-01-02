@@ -14,6 +14,7 @@ Patch0:		shapelib-1.2.10-gcc4-fix.patch
 Patch1:		shapelib-1.2.10-mdkconf.patch
 Requires:	proj >= 4.4.1
 BuildRequires:	libproj-devel
+Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 The Shapefile C Library provides the ability to write
