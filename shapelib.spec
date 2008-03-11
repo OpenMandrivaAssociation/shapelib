@@ -53,13 +53,13 @@ attribute file (.dbf).
 %patch1 -p1 -b .mdkconf
 
 %build
-%make CFLAGS="$RPM_OPT_FLAGS"
+make CFLAGS="$RPM_OPT_FLAGS"
 %ifarch sparc sparcv9 sparc64 ppc
-%make CFLAGS="$RPM_OPT_FLAGS -DPROJ4 -D_BIG_ENDIAN -I.. -w" -C contrib
+make CFLAGS="$RPM_OPT_FLAGS -DPROJ4 -D_BIG_ENDIAN -I.. -w" -C contrib
 %else
-%make CFLAGS="$RPM_OPT_FLAGS -DPROJ4 -D_LITTLE_ENDIAN -I.. -w" -C contrib
+make CFLAGS="$RPM_OPT_FLAGS -DPROJ4 -D_LITTLE_ENDIAN -I.. -w" -C contrib
 %endif
-%make lib CFLAGS="$RPM_OPT_FLAGS"
+make lib CFLAGS="$RPM_OPT_FLAGS"
 
 %install
 rm -rf %{buildroot}
