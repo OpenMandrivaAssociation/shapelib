@@ -5,7 +5,7 @@
 Summary:	API in "C" for Shapefile handling
 Name:		shapelib
 Version:	1.2.10
-Release:	%mkrel 4
+Release:	%mkrel 5
 License:	LGPL MIT
 Group:		Sciences/Geosciences
 URL:		http://shapelib.maptools.org/
@@ -14,7 +14,7 @@ Patch0:		shapelib-1.2.10-gcc4-fix.patch
 Patch1:		shapelib-1.2.10-mdkconf.patch
 Requires:	proj >= 4.4.1
 BuildRequires:	libproj-devel
-Buildroot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 The Shapefile C Library provides the ability to write
@@ -63,6 +63,7 @@ make lib CFLAGS="$RPM_OPT_FLAGS"
 
 %install
 rm -rf %{buildroot}
+
 mkdir -p %{buildroot}%{_bindir}
 install -m755 dbfadd dbfcreate dbfdump shpadd shpcreate shpdump shptest %{buildroot}%{_bindir}
 install -m755 contrib/{dbfcat,dbfinfo,shpcat,shpcentrd,shpdata,shpdxf,shpfix,shpinfo,shpwkb,shpproj} %{buildroot}%{_bindir}
