@@ -5,7 +5,7 @@
 Summary:	API in "C" for Shapefile handling
 Name:		shapelib
 Version:	1.2.10
-Release:	%mkrel 5
+Release:	%mkrel 6
 License:	LGPL MIT
 Group:		Sciences/Geosciences
 URL:		http://shapelib.maptools.org/
@@ -13,7 +13,7 @@ Source0:	http://shapelib.maptools.org/dl/%{name}-%{version}.tar.bz2
 Patch0:		shapelib-1.2.10-gcc4-fix.patch
 Patch1:		shapelib-1.2.10-mdkconf.patch
 Requires:	proj >= 4.4.1
-BuildRequires:	libproj-devel
+BuildRequires:	proj-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
