@@ -98,3 +98,59 @@ rm -rf %{buildroot}
 %files -n %{libname}
 %defattr (-,root,root)
 %{_libdir}/*.so.*
+
+
+%changelog
+* Sun Sep 20 2009 Thierry Vignaud <tvignaud@mandriva.com> 1.2.10-7mdv2010.0
++ Revision: 445104
+- rebuild
+
+* Sat Jan 24 2009 Funda Wang <fundawang@mandriva.org> 1.2.10-6mdv2009.1
++ Revision: 333297
+- rebuild
+
+* Wed Jul 09 2008 Oden Eriksson <oeriksson@mandriva.com> 1.2.10-5mdv2009.0
++ Revision: 233022
+- rebuild
+
+  + Pixel <pixel@mandriva.com>
+    - do not call ldconfig in %%post/%%postun, it is now handled by filetriggers
+
+* Tue Mar 11 2008 Oden Eriksson <oeriksson@mandriva.com> 1.2.10-4mdv2008.1
++ Revision: 185450
+- bump release
+- fix build
+
+  + Olivier Blin <oblin@mandriva.com>
+    - restore BuildRoot
+
+  + Thierry Vignaud <tvignaud@mandriva.com>
+    - kill re-definition of %%buildroot on Pixel's request
+
+* Sun Sep 09 2007 Oden Eriksson <oeriksson@mandriva.com> 1.2.10-3mdv2008.0
++ Revision: 83611
+- new devel naming
+
+* Sun Sep 09 2007 Oden Eriksson <oeriksson@mandriva.com> 1.2.10-2mdv2008.0
++ Revision: 83606
+- Import shapelib
+
+
+
+* Thu Aug 03 2006 Oden Eriksson <oeriksson@mandriva.com> 1.2.10-2mdv2007.0
+- fix deps
+
+* Thu Jun 16 2005 Per Øyvind Karlsen <pkarlsen@mandriva.com> 1.2.10-1mdk
+- 1.2.10
+- reintroduced this package with lots of fixes as it's required by roadmap (requested on the club)
+
+* Mon Sep 03 2001 Lenny Cartier <lenny@mandrakesoft.com> 1.2.8-3mdk
+- rebuild
+
+* Mon Jan 29 2001 Lenny Cartier <lenny@mandrakesoft.com> 1.2.8-2mdk
+- rebuild
+- apply library policy
+
+* Thu Nov 16 2000 Lenny Cartier <lenny@mandrakesoft.com> 1.2.8-1mdk
+- patch makefile to install in buildroot
+- used srpm from Franck Martin <franck@sopac.org>
