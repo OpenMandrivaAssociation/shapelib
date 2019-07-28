@@ -4,12 +4,12 @@
 
 Summary:	API in "C" for Shapefile handling
 Name:		shapelib
-Version:	1.4.1
-Release:	3
+Version:	1.5.0
+Release:	1
 License:	LGPL MIT
 Group:		Sciences/Geosciences
 URL:		http://shapelib.maptools.org/
-Source0:	http://download.osgeo.org/shapelib/%{name}-%{version}.tar.gz
+Source0:	https://github.com/OSGeo/shapelib/archive/v%{version}.tar.gz
 Requires:	proj >= 4.4.1
 BuildRequires:	pkgconfig(proj) >= 4.4.1
 
@@ -62,17 +62,13 @@ make CFLAGS="$RPM_OPT_FLAGS -DPROJ4 -D_LITTLE_ENDIAN -I.. -w" -C contrib
 %makeinstall_std -C contrib
 
 %files -n %{name}
-%defattr (-,root,root)
 %doc README.tree
-%doc contrib/doc/shpproj.txt
 %{_bindir}/*
 
 %files -n %{develname}
-%defattr (-,root,root)
 %{_includedir}/libshp
 %{_libdir}/*.so
 %{_libdir}/pkgconfig/*.pc
 
 %files -n %{libname}
-%defattr (-,root,root)
 %{_libdir}/*.so.%{major}*
