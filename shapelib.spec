@@ -46,7 +46,7 @@ attribute file (.dbf).
 %prep
 
 %setup -q
-%apply_patches
+%autopatch -p1
 %configure --includedir=%{_includedir}/libshp
 
 %build
