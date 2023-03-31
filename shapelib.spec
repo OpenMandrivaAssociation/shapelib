@@ -5,7 +5,7 @@
 Summary:	API in "C" for Shapefile handling
 Name:		shapelib
 Version:	1.5.0
-Release:	1
+Release:	2
 License:	LGPL MIT
 Group:		Sciences/Geosciences
 URL:		http://shapelib.maptools.org/
