@@ -1,11 +1,13 @@
-%define	major 2
-%define	libname %mklibname %{name} %{major}
-%define	develname %mklibname %{name} -d
+%define	major 4
+%define	oldlibname %mklibname %{name} 2
+%define	olddevelname %mklibname %{name} -d
+%define	libname %mklibname shp
+%define	develname %mklibname shp -d
 
 Summary:	API in "C" for Shapefile handling
 Name:		shapelib
-Version:	1.5.0
-Release:	2
+Version:	1.6.0
+Release:	1
 License:	LGPL MIT
 Group:		Sciences/Geosciences
 URL:		http://shapelib.maptools.org/
@@ -22,6 +24,7 @@ attribute file (.dbf).
 %package -n	%{libname}
 Summary:	API in "C" for Shapefile handling
 Group:		System/Libraries
+%rename %{oldlibname}
 
 %description -n	%{libname}
 The Shapefile C Library provides the ability to write
@@ -36,6 +39,7 @@ Requires:	%{libname} = %{version}
 Provides:	lib%{name}-devel = %{version}-%{release}
 Provides:	%{name}-devel = %{version}-%{release}
 Obsoletes:	%{mklibname %{name} 1 -d}
+%rename %{olddevelname}
 
 %description -n	%{develname}
 The Shapefile C Library provides the ability to write
@@ -44,9 +48,7 @@ limited extent) ESRI Shapefiles, and the associated
 attribute file (.dbf).
 
 %prep
-
-%setup -q
-%autopatch -p1
+%autosetup -p1
 %configure --includedir=%{_includedir}/libshp
 
 %build
