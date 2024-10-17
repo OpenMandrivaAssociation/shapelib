@@ -10,7 +10,7 @@ Version:	1.6.1
 Release:	1
 License:	LGPL MIT
 Group:		Sciences/Geosciences
-URL:		http://shapelib.maptools.org/
+URL:		https://shapelib.maptools.org/
 Source0:	https://github.com/OSGeo/shapelib/archive/v%{version}.tar.gz
 Requires:	proj >= 4.4.1
 BuildRequires:	pkgconfig(proj) >= 4.4.1
