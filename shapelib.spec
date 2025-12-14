@@ -6,7 +6,7 @@
 
 Summary:	API in "C" for Shapefile handling
 Name:		shapelib
-Version:	1.6.1
+Version:	1.6.2
 Release:	1
 License:	LGPL MIT
 Group:		Sciences/Geosciences
