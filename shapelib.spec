@@ -13,6 +13,11 @@ Group:		Sciences/Geosciences
 URL:		https://shapelib.maptools.org/
 Source0:	https://github.com/OSGeo/shapelib/archive/v%{version}.tar.gz
 Requires:	proj >= 4.4.1
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	pkgconfig(proj) >= 4.4.1
 
 %description
